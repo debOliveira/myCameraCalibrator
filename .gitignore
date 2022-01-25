@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+*.gif
+*.rar*
+*.jpg
+*.png
+*.fig
