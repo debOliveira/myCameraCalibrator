@@ -13,8 +13,8 @@ for i=1:N
   x=generic2sphere_dh(ms{i},p,thetamax);
   xp=[xs{i} ones(size(xs{i},1),1)];
   if any(isnan(x),'all')
-      fprintf(1,'Please remove image number %.4f\n',i);
-      continue
+      fprintf(1,'[ERROR] computeHomography: Please remove image number %.4f\n',i);
+      break
   end
   % initial estimate for Hs from correspondences xp<->x by linear algorithm with data normalization
   H0=homdltps_dh([xp x]);  

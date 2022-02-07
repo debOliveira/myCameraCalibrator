@@ -22,10 +22,9 @@ function [theta,phi]=backproject_dh(m,p,thetamax)
 
 
 mu=p(3); mv=p(4); u0=p(5); v0=p(6);
-tol=10^(-10);
 
-if nargin<3 | isempty(thetamax)
-  [thetafirstmax, thetamax]=examineradialprojection_dh(p);
+if nargin<3 || isempty(thetamax)
+  [~, thetamax]=examineradialprojection_dh(p);
 end
 
 if length(p)<7
@@ -44,11 +43,9 @@ else
   x=1/mu*(m(:,1)-u0);
   y=1/mv*(m(:,2)-v0);
   
-  if 1
-    [xc,yc]=invasymmetriclinear_dh(x,y,[k1 k2 k3 k4 k5],dp,thetamax);
-  %else  % did not work very well
-  %  [xc,yc]=distortasymmetric(x,y,[k1 k2 k3 k4 k5],idp,thetamax);
-  end  
+  [xc,yc]=invasymmetriclinear_dh(x,y,[k1 k2 k3 k4 k5],dp,thetamax);
+  % did not work very well
+  %[xc,yc]=distortasymmetric(x,y,[k1 k2 k3 k4 k5],idp,thetamax); 
 
   [theta,phi]=backprojectsymmetric_dh(xc,yc,[k1 k2 k3 k4 k5],thetamax);  
 end

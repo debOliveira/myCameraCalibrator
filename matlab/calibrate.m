@@ -9,18 +9,10 @@ mv = mu;
 u0 = 640/2;     %principal point in pixels
 v0 = 480/2;
 squareSize = 30;
+dirName = 'C:\Users\dbnun\Desktop\myCameraCalibrator\python\camera2';
 
-% load('points2D.mat')
-% N = length(pts1)/3;
-% pts1 = reshape(pts1,[3,2,N]);
-% for i=1:N
-%     ms{i} = pts1(:,:,i);
-%     xs{i} = [0 0;0 10.3;0 15.7];
-% end
-
-fprintf('------------ >>> CAMERA 1 <<< ------------\n')
 fprintf('[INFO] Extract points from checkerboard\n')
-[ms,xs]=extractCorners('C:\Users\dbnun\Desktop\myCameraCalibrator\python\camera1',squareSize);
+[ms,xs]=extractCorners(dirName,squareSize);
 
 fprintf('[INFO] Initialising parameters\n')
 [p0,thetamax]=initialiseParameters(FOV,f,mu,mv,u0,v0);

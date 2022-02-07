@@ -21,3 +21,7 @@ fprintf('Average residual of fit2oddlsq: %g\n',mean(mres))
 
  p0=[k1 k2 f*mu f*mv u0 v0];
  fprintf('Initial parameters: [%g %g %g %g %g %g]\n',p0)
+ 
+if length(p0)~=6
+  error('[ERROR] initialiseParameters: Initial guess for p failed');
+end
