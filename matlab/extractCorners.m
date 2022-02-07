@@ -13,6 +13,8 @@ end
 % detect corners and generate checker board
 [imagePoints, boardSize] = detectCheckerboardPoints(allimage);
 worldPoints = generateCheckerboardPoints(boardSize, squareSize);
+worldPoints = worldPoints-(flip(boardSize)-2)*squareSize/2;
+
 
 % create arrays and plot images
 N = size(imagePoints,3);

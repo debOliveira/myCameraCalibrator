@@ -25,5 +25,5 @@ for i=1:N
 end
 
 
-fprintf('Average residual of lsqnonlin: %g\n',mean(err_homo))
+fprintf('[INFO] computeHomography: Average residual of lsqnonlin = %g\n',mean(err_homo))
 
