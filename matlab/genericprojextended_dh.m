@@ -34,6 +34,13 @@ j1=p(13); j2=p(14); j3=p(15);
 l1=p(16); l2=p(17); l3=p(18); l4=p(19);
 m1=p(20); m2=p(21); m3=p(22); m4=p(23);
 
+if PLEN > 23
+    k6=p(24); k7=p(25); k8=p(26); k9=p(27);
+    k = [k1 k2 k3 k4 k5 k6 k7 k8 k9];
+else
+    k = [k1 k2 k3 k4 k5];    
+end
+
 Xc=R*X'+t*ones(1,n);
 Xc=Xc';
 
@@ -47,7 +54,10 @@ rXc(rzero)=1;
 cosphi=Xc(:,1)./rXc;
 sinphi=Xc(:,2)./rXc;
 
-r=k1*theta+k2*theta.^3+k3*theta.^5+k4*theta.^7+k5*theta.^9;
+r = 0;
+for i=0:(length(k)-1)
+  r = r+k(i+1)*theta.^(i*2+1);
+end
 
 if PLEN<23
   dt=0;dr=0;

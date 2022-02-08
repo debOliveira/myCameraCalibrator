@@ -26,8 +26,10 @@ elseif strcmp(model, 'radial')
   PLEN=9;
 elseif strcmp(model, 'extended')
   PLEN=23; 
+elseif strcmp(model, 'ultra')
+  PLEN=41; 
 else
-  error('In minimiseprojerrs: Unknown camera model. See sys.model in calibconfig.m.');
+  error('[ERROR] minimiseprojerrs: Unknown camera model');
 end
 intplen=length(intp);
 if intplen<PLEN
@@ -77,4 +79,8 @@ end
 
 %save pars_v22 par0 par Rs ts p0 Rs0 ts0 ms xs model radius
 
- fprintf('Initial parameters: [%g %g %g %g %g %g %g %g %g]\n',p)
+fprintf('[RESULTS] minimiseprojerrs_dh: Final parameters = [',p)
+for i = 1:PLEN
+   fprintf(' %g',p(i))
+end
+fprintf(']\n')

@@ -9,10 +9,11 @@ mv = mu;
 u0 = 640/2;     %principal point in pixels
 v0 = 480/2;
 squareSize = 30;
-dirName = 'C:/Users/Debora/Desktop/myCameraCalibrator/python/camera1';
+dirName = 'C:/Users/dbnun/Desktop/myCameraCalibrator/python/camera2';
+extension = '*.jpg';
 
 fprintf('[INFO] Extract points from checkerboard\n')
-[ms,xs]=extractCorners(dirName,squareSize);
+[ms,xs]=extractCorners(dirName,squareSize,extension);
 
 fprintf('[INFO] Initialising parameters\n')
 [p0,thetamax]=initialiseParameters(FOV,f,mu,mv,u0,v0);

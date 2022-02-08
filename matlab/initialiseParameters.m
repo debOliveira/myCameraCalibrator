@@ -17,10 +17,10 @@ r=f*tan(theta);
 
 [k,mres]=poly_fit2oddlsq(theta,r,3);
 k1=k(1); k2=k(3);
-fprintf('Average residual of fit2oddlsq: %g\n',mean(mres))
+fprintf('[RESULTS] initialiseParameters: Average residual of fit2oddlsq = %g\n',mean(mres))
 
  p0=[k1 k2 f*mu f*mv u0 v0];
- fprintf('Initial parameters: [%g %g %g %g %g %g]\n',p0)
+ fprintf('[RESULTS] initialiseParameters: Initial parameters =[%g %g %g %g %g %g]\n',p0)
  
 if length(p0)~=6
   error('[ERROR] initialiseParameters: Initial guess for p failed');

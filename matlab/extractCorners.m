@@ -1,8 +1,8 @@
-function [ms,xs]=extractCorners(dirName,squareSize)
+function [ms,xs]=extractCorners(dirName,squareSize,extension)
 
 % read images
 allimage=cast([], 'uint8');
-contents = dir(fullfile(dirName, '*.jpg'));
+contents = dir(fullfile(dirName,extension));
 N = length(contents);
 for i=1:N
     name = contents(i).name;

@@ -16,6 +16,13 @@ xsnorms=(sqrt(sum(xs.^2,2)));
 
 xs=xs./(xsnorms*ones(1,3));
 
+% scatter(xs(:,1),xs(:,2));
+% hold on;
+% scatter(xn(:,1),xn(:,2));
+% legend('spherical coord from the 3d',...
+%     'spherical coord from the image');
+% hold off
+
 for i=1:M
   d(i)=sin(acos(xn(i,:)*(xs(i,:))'));
 end

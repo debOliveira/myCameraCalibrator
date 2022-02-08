@@ -53,5 +53,15 @@ meanerr=mean(meanerr);
 mederr=median(d);
 rmserr=sqrt(mean(d.^2));
 
-fprintf('Average residual of reprojection error: %gpx\n',meanerr)
-fprintf('RMS distance between measured and modelled centroids: %gpx\n',rmserr)
+fprintf('[RESULTS] projerrs_dh: Average residual of reprojection error = %gpx\n',meanerr)
+fprintf('[RESULTS] projerrs_dh: RMS distance between measured and modelled centroids = %gpx\n',rmserr)
+
+figure()
+n_error=length(err);
+error_p=zeros(n_error,1);
+for i=1:n_error
+    error_p(i)=mean(err{1,i});
+end
+bar(error_p,'c');
+hold on
+plot(xlim,[meanerr meanerr],'r--');
