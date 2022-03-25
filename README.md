@@ -4,7 +4,7 @@ This folder provides two interfaces for camera calibration using the [generic ca
 
 ## MATLAB code
 
-Is an adaptation of [Kannala's](https://users.aalto.fi/~kannalj1/calibration/calibration.html) and [Deng's](https://github.com/DengMark/CameraCalibrator) toolbox, correcting some issues with the radial model initial guess. All the configurations are done in [calibrate](matlab/calibrate.m). Please adjust the parameters to:
+Is an adaptation of [Kannala's](https://users.aalto.fi/~kannalj1/calibration/calibration.html) and [Deng's](https://github.com/DengMark/CameraCalibrator) toolbox, correcting some issues with the radial model initial guess. All the configurations are done in [calibrate.m](matlab/calibrate.m). Please adjust the parameters to:
 
 - the wider FOV of the camera (diagonally, e.g.).
 - the focal distance is in millimeters.
