@@ -2,14 +2,14 @@ clc
 clear all
 close all
 
-FOV = 70;       %degrees
-f = 3.6;        %millimeters
-mu = 1/0.0057;  %px/mm
+FOV = 62.2;       %degrees
+f = 3.04;        %millimeters
+mu = 1/0.00112;  %px/mm
 mv = mu;
-u0 = 640/2;     %principal point in pixels
-v0 = 480/2;
+u0 = 960/2;     %principal point in pixels
+v0 = 720/2;
 squareSize = 30;
-dirName = 'C:/Users/dbnun/Desktop/myCameraCalibrator/python/camera2';
+dirName = '~/Desktop/myCameraCalibrator/python/camera1/50cm';
 extension = '*.jpg';
 
 fprintf('[INFO] Extract points from checkerboard\n')

@@ -6,7 +6,7 @@ contents = dir(fullfile(dirName,extension));
 N = length(contents);
 for i=1:N
     name = contents(i).name;
-    im = imread(strcat(strcat(dirName,'\'),name));
+    im = imread(strcat(strcat(dirName,'/'),name));
     allimage(:, :, :, i) = im;
 end
 
@@ -32,6 +32,7 @@ for i=1:N
          'Color','yellow','LineWidth',3);
     line([imagePoints(1,1,i) imagePoints(3,1,i)],[imagePoints(1,2,i) imagePoints(3,2,i)],...
         'Color','green','LineWidth',3);
+    hold off
 end
 
 % visual assertion
