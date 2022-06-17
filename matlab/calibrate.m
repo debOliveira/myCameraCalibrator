@@ -9,7 +9,7 @@ mv = mu;
 u0 = 960/2;     %principal point in pixels
 v0 = 720/2;
 squareSize = 30;
-dirName = 'C:/Users/dbnun/Desktop/myCameraCalibrator/python/camera4';
+dirName = 'C:/Users/dbnun/Downloads/myCameraCalibrator/python/camera4';
 extension = '*.jpg';
 
 fprintf('[INFO] Extract points from checkerboard\n')
